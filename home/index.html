@@ -1,79 +1,196 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="sk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Tipovačka — demo</title>
+<style>
+  :root{font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;}
+  body{margin:0;background:#f5f7fb;color:#111;display:flex;min-height:100vh;align-items:flex-start;justify-content:center;padding:28px;}
+  .card{width:920px;background:#fff;border-radius:12px;box-shadow:0 8px 30px rgba(20,30,60,0.08);padding:20px;}
+  h1{margin:0 0 10px;font-size:20px}
+  .row{display:flex;gap:12px;align-items:center}
+  .col{flex:1}
+  input[type="text"]{width:100%;padding:10px;border-radius:8px;border:1px solid #e3e8f0}
+  button{background:#2563eb;color:white;padding:10px 14px;border-radius:8px;border:0;cursor:pointer}
+  .muted{color:#6b7280;font-size:13px}
+  .stats{display:flex;gap:12px;margin-top:14px}
+  .stat{flex:1;padding:12px;border-radius:8px;background:#f8fafc;border:1px solid #eef2ff}
+  table{width:100%;border-collapse:collapse;margin-top:12px}
+  th,td{padding:8px;border-bottom:1px solid #f1f5f9;text-align:left}
+  .bets{margin-top:14px}
+  .bet{padding:10px;border-radius:8px;background:#fff9f0;border:1px solid #fde68a;margin-bottom:8px}
+  .odds{font-weight:700}
+  .small{font-size:13px;color:#374151}
+</style>
 </head>
 <body>
-    
-<table border="1">
-<tr>
-    <th rowspan="2">id</th>
-    <th>Meno</th>
-    <th>Priezvisko</th>
-</tr>
-<tr>
-    <td>Samuel</td>
-    <td>Svoboda</td>
+  <div class="card">
+    <h1>Tipovačka — demo (scrape + vypočet kurzov)</h1>
+    <div class="row">
+      <div class="col">
+        <label class="muted">URL hráča / tímu (napr. stránka, ktorú si poslal):</label>
+        <input id="url" type="text" value="https://sportnet.sme.sk/futbalnet/clen/5d65931986dc8b723834b130/samuel-svoboda/">
+      </div>
+      <div style="width:160px">
+        <label class="muted">&nbsp;</label>
+        <button id="load">Načítať a spočítať</button>
+      </div>
+    </div>
 
-</tr>
-<tr>
-    <td>1</td>
-    <td>Richard</td>
-    <td>Michalovič</td>
-</tr>
+    <div id="result" style="margin-top:18px;display:none">
+      <div class="row">
+        <div class="col">
+          <div class="small">Meno</div>
+          <div id="name" style="font-size:18px;font-weight:600"></div>
+          <div class="muted" id="club"></div>
+        </div>
+        <div style="width:260px">
+          <div class="small">Kurzy (približné)</div>
+          <div id="oddsBox" style="display:flex;gap:8px;margin-top:6px">
+            <!-- dynamic -->
+          </div>
+        </div>
+      </div>
 
-</table>
-<br>
-<table border="1">
-<tr>
-    <th>id</th>
-    <th colspan="2">Meno</th>
+      <div class="stats" id="statsArea"></div>
 
-</tr>
-<tr>
-    <td>1.</td>
-    <td colspan="2"></td>
+      <div style="margin-top:12px">
+        <div class="small">Štatistika (tabuľka ak existuje)</div>
+        <div id="tableWrap"></div>
+      </div>
 
+      <div style="margin-top:12px">
+        <div class="small">Tipovať</div>
+        <div style="display:flex;gap:8px;margin-top:8px">
+          <select id="pick"><option value="win">Výhra</option><option value="draw">Remíza</option><option value="lose">Prehra</option></select>
+          <input id="stake" type="number" min="0" step="0.1" placeholder="Stávka (EUR)" style="padding:8px;border-radius:8px;border:1px solid #e5e7eb" />
+          <button id="place">Vsadiť</button>
+        </div>
+      </div>
 
-</tr>
-<tr>
-    <td>2.</td>
-    <td></td>
-    <td></td>
-</tr>
+      <div class="bets" id="bets"></div>
+    </div>
 
-</table>
-<br>
-<table border="1">
-    <tr>
-        <th rowspan="2">id</th>
-        <th colspan="2">Meno</th>
-        <th>Svoboda</th>
-    </tr>
-    <tr>
-        <td>Samuel</td>
-        <td>Svoboda</td>
-        <td></td>
-    </tr>
-    <tr>
-        <td rowspan="2">1.</td>
-        <td>Alex</td>
-        <td>Chylik</td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>Dominik</td>
-        <td>Michalovic</td>
-        <td></td>
-    </tr>
+    <div id="loading" style="display:none;margin-top:12px" class="muted">Načítavam…</div>
+    <div id="err" style="display:none;margin-top:12px;color:#b91c1c"></div>
+  </div>
 
+<script>
+  const apiBase = 'http://localhost:3000/api/scrape';
 
+  function formatOdds(od) { return od ? od.toFixed(2) : '-' }
 
+  function renderOdds(odds) {
+    const box = document.getElementById('oddsBox');
+    box.innerHTML = '';
+    ['win','draw','lose'].forEach(k=>{
+      const div = document.createElement('div');
+      div.style.padding='8px';
+      div.style.borderRadius='8px';
+      div.style.background='#f1f5f9';
+      div.style.minWidth='72px';
+      div.style.textAlign='center';
+      div.innerHTML = `<div class="muted" style="font-size:12px">${k}</div><div class="odds">${odds[k]}</div>`;
+      box.appendChild(div);
+    });
+  }
 
-</table>
+  function saveBet(bet) {
+    const bets = JSON.parse(localStorage.getItem('bets')||'[]');
+    bets.unshift(bet);
+    localStorage.setItem('bets', JSON.stringify(bets.slice(0,50)));
+    renderBets();
+  }
 
+  function renderBets(){
+    const wrap = document.getElementById('bets');
+    const bets = JSON.parse(localStorage.getItem('bets')||'[]');
+    if(bets.length===0){ wrap.innerHTML = '<div class="muted">Zatiaľ žiadne stávky.</div>'; return; }
+    wrap.innerHTML = bets.map(b=>{
+      const ret = (b.odds * b.stake).toFixed(2);
+      return `<div class="bet"><div style="display:flex;justify-content:space-between"><div><strong>${b.name||'Objekt'}</strong><div class="small muted">${b.pick} • kurz ${b.odds}</div></div><div><strong>${b.stake} €</strong><div class="small muted">Výhra: ${ret} €</div></div></div></div>`;
+    }).join('');
+  }
 
+  document.getElementById('load').addEventListener('click', async ()=>{
+    const url = document.getElementById('url').value.trim();
+    if(!url) return alert('Zadaj URL');
+    document.getElementById('loading').style.display='block';
+    document.getElementById('err').style.display='none';
+    document.getElementById('result').style.display='none';
+    try {
+      const res = await fetch(apiBase + '?url=' + encodeURIComponent(url));
+      if(!res.ok) throw new Error('Chyba pri API: ' + res.status);
+      const data = await res.json();
+      document.getElementById('loading').style.display='none';
+      document.getElementById('result').style.display='block';
+
+      document.getElementById('name').textContent = data.parsed.name || 'Neznáme';
+      document.getElementById('club').textContent = data.parsed.club || '';
+      // render stats summary
+      const statsArea = document.getElementById('statsArea');
+      statsArea.innerHTML = '';
+      const agg = data.parsed.aggregated || {};
+      const statBlocks = [
+        ['Zápasy', agg.matches || '-'],
+        ['Minúty', agg.minutes || '-'],
+        ['Góly', agg.goals || '-']
+      ];
+      statBlocks.forEach(s=>{
+        const div = document.createElement('div');
+        div.className='stat';
+        div.innerHTML = `<div class="muted">${s[0]}</div><div style="font-weight:700">${s[1]}</div>`;
+        statsArea.appendChild(div);
+      });
+
+      // table (if any)
+      const tableWrap = document.getElementById('tableWrap');
+      tableWrap.innerHTML = '';
+      if(data.parsed.stats_table && data.parsed.stats_table.length){
+        const tbl = document.createElement('table');
+        const head = document.createElement('thead');
+        const first = data.parsed.stats_table[0];
+        head.innerHTML = '<tr>' + first.map(h=>`<th>${h}</th>`).join('') + '</tr>';
+        tbl.appendChild(head);
+        const body = document.createElement('tbody');
+        data.parsed.stats_table.slice(1).forEach(r=>{
+          body.innerHTML += '<tr>' + r.map(c=>`<td>${c}</td>`).join('') + '</tr>';
+        });
+        tbl.appendChild(body);
+        tableWrap.appendChild(tbl);
+      } else {
+        tableWrap.innerHTML = '<div class="muted">Žiadna tabuľka štatistík nenájdená.</div>';
+      }
+
+      // odds
+      const oddsObj = data.odds.odds;
+      renderOdds(oddsObj);
+
+      // store last loaded name & odds for bets
+      window.__lastLoaded = { name: data.parsed.name || 'Objekt', odds: oddsObj };
+
+    } catch(err){
+      document.getElementById('loading').style.display='none';
+      document.getElementById('err').style.display='block';
+      document.getElementById('err').textContent = 'Chyba: ' + err.message;
+      console.error(err);
+    }
+  });
+
+  document.getElementById('place').addEventListener('click', ()=>{
+    const stake = parseFloat(document.getElementById('stake').value);
+    const pick = document.getElementById('pick').value;
+    if(isNaN(stake) || stake <= 0) return alert('Zadaj platnú stávku');
+    if(!window.__lastLoaded) return alert('Najprv načítaj objekt a kurzy');
+    const odds = window.__lastLoaded.odds[pick];
+    const bet = { time: Date.now(), name: window.__lastLoaded.name, pick, stake, odds };
+    saveBet(bet);
+    alert('Stávka uložená (lokálne).');
+  });
+
+  // show saved bets on load
+  renderBets();
+</script>
 </body>
 </html>
