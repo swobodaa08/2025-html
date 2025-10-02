@@ -1,0 +1,18 @@
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-color: grey;
+}
+h2{
+    color: rgb(194, 194, 194);
+}
+p{
+    color: rgb(22, 16, 16);
+}
+a{
+    color: rgb(160, 0, 0);
+}
+textarea{
+    resize: none;
+}
