@@ -1,5 +1,5 @@
 body {
-    background-color: #555555; /* šedé pozadie */
+    background-color: #555555;
     color: white;
     font-family: sans-serif;
     text-align: center;
@@ -30,7 +30,6 @@ div {
     border-radius: 12px;
     background-color: rgb(0, 0, 0);
     border: 1px solid rgb(255, 255, 255);
-    box-shadow: 0px 0px 20px rgba(0,0,0,0.5);
     text-align: center;
 }
 
@@ -40,14 +39,12 @@ img.shadow {
     border-radius: 8px;
 }
 
-/* Hover efekt na celý produkt */
 div:hover {
     background-color: #047c00;
     transform: scale(1.03);
     transition: all 0.3s ease;
 }
 
-/* Tlačidlo "Kúpiť" – vytvorené len pomocou div štýlu */
 div button {
     background: linear-gradient(90deg, #ffcc00, #ff9900);
     color: #222222;
@@ -57,7 +54,6 @@ div button {
     font-weight: bold;
     font-size: 15px;
     cursor: pointer;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
 }
 
 div button:hover {
@@ -69,7 +65,7 @@ div button:hover {
 #price {
     font-size: 18px;
     font-family: unbounded, Sans-serif;
-    color: #ffffff; /* žltá farba pre cenu */
+    color: #ffffff;
     margin: 10px 0;
     font-weight: bold;
 }
