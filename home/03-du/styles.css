@@ -20,7 +20,6 @@ h1 {
     padding: 10px 30px;
     border-radius: 10px;
     background-color: #333333;
-    box-shadow: 0px 0px 15px rgba(255,255,255,0.2);
 }
 
 div {
@@ -39,7 +38,6 @@ img.shadow {
     width: 100%;
     height: auto;
     border-radius: 8px;
-    box-shadow: 0px 0px 15px rgba(0,0,0,0.6);
 }
 
 /* Hover efekt na celý produkt */
