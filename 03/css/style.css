@@ -1,0 +1,35 @@
+body {
+    background-color: #222222;
+    color: white;
+}
+h1 {
+    font-family: sans-serif;
+    font-size: 28px;
+    line-height: 32px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    border: 1px solid white;
+    text-align: right;
+    display: inline-block;
+    margin: 20px 4px 5px 60px;
+    padding: 1%;
+
+}
+
+
+div {
+    width: 200px;
+    height: 275px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: brown;
+    border: 1px transparent rgb(255, 255, 255);
+}
+
+img.shadow {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    
+}

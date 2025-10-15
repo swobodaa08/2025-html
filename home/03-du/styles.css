@@ -1,0 +1,77 @@
+body {
+    background-color: #555555; /* šedé pozadie */
+    color: white;
+    font-family: sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: sans-serif;
+    font-size: 32px;
+    line-height: 36px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    border: 2px solid white;
+    display: inline-block;
+    margin: 20px auto 10px auto;
+    padding: 10px 30px;
+    border-radius: 10px;
+    background-color: #333333;
+    box-shadow: 0px 0px 15px rgba(255,255,255,0.2);
+}
+
+div {
+    width: 450px;
+    height: auto;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: rgb(0, 0, 0);
+    border: 1px solid rgb(255, 255, 255);
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.5);
+    text-align: center;
+}
+
+img.shadow {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.6);
+}
+
+/* Hover efekt na celý produkt */
+div:hover {
+    background-color: #047c00;
+    transform: scale(1.03);
+    transition: all 0.3s ease;
+}
+
+/* Tlačidlo "Kúpiť" – vytvorené len pomocou div štýlu */
+div button {
+    background: linear-gradient(90deg, #ffcc00, #ff9900);
+    color: #222222;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+}
+
+div button:hover {
+    background: linear-gradient(90deg, #ffee33, #ffbb00);
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+#price {
+    font-size: 18px;
+    font-family: unbounded, Sans-serif;
+    color: #ffffff; /* žltá farba pre cenu */
+    margin: 10px 0;
+    font-weight: bold;
+}
