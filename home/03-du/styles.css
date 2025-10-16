@@ -62,6 +62,11 @@ div button:hover {
     transition: 0.3s;
 }
 
+div button:active {
+    background: rgb(0, 47, 255);
+    opacity: 1;
+}
+
 #price {
     font-size: 18px;
     font-family: unbounded, Sans-serif;
