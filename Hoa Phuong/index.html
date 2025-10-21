@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoa Phượng</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            background-color: #fff9f5;
+            color: #333;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background-color: #b82e1f;
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        header h1 {
+            font-size: 1.8em;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffe7d6;
+        }
+
+        /* ===== SLIDER ===== */
+        .slider {
+            position: relative;
+            overflow: hidden;
+            max-width: 100%;
+            height: 400px;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 1s ease;
+            width: 300%;
+        }
+
+        .slides img {
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .slider button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0,0,0,0.4);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .prev { left: 10px; }
+        .next { right: 10px; }
+
+        /* ===== MENU ===== */
+        .menu {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .menu h2 {
+            color: #b82e1f;
+            margin-bottom: 20px;
+        }
+
+        .menu-items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .menu-item {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            width: 250px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .menu-item:hover {
+            transform: scale(1.05);
+        }
+
+        .menu-item img {
+            width: 100%;
+            border-radius: 10px;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .menu-item h3 {
+            margin: 10px 0;
+            color: #b82e1f;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: #b82e1f;
+            color: white;
+            text-align: center;
+            padding: 30px 10px;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+            }
+
+            nav ul {
+                justify-content: center;
+                margin-top: 10px;
+            }
+
+            .menu-items {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .slider {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>Hoa Phượng</h1>
+        <nav>
+            <ul>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#fotky">Fotky</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- SLIDER -->
+    <section class="slider" id="fotky">
+        <div class="slides">
+            <img src="./img/img1.png" alt="Reštaurácia">
+            <img src="./img/img2.png" alt="Ázijské jedlo">
+            <img src="./img/img3.png" alt="Vietnamská kuchyňa">
+        </div>
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+    </section>
+
+    <!-- MENU -->
+    <section class="menu" id="menu">
+        <h2>Naše Menu</h2>
+        <div class="menu-items">
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1601924582971-c9b3f4fdfd8b?auto=format&fit=crop&w=500&q=60" alt="Pho Bo">
+                <h3>Pho Bo</h3>
+                <p>Tradičná vietnamská hovädzia polievka s rezancami.</p>
+                <p><strong>7,90 €</strong></p>
+            </div>
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1603133872878-684f1d0dcd16?auto=format&fit=crop&w=500&q=60" alt="Bún Nem">
+                <h3>Bún Nem</h3>
+                <p>Ryžové rezance s jarnými závitkami a bylinkami.</p>
+                <p><strong>8,50 €</strong></p>
+            </div>
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1609743522653-99b7d3e3c62e?auto=format&fit=crop&w=500&q=60" alt="Pad Thai">
+                <h3>Pad Thai</h3>
+                <p>Thajské rezance s arašidmi, vajíčkom a tofu.</p>
+                <p><strong>8,90 €</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="kontakt">
+        <p><strong>Hoa Phượng - Vietnamsko-Ázijská Reštaurácia</strong></p>
+        <p>Makovického 8, 010 01 Žilina</p>
+        <p>Tel: +421 900 123 456</p>
+        <p>Email: info@hoaphuong.sk</p>
+        <p>&copy; 2025 Hoa Phượng</p>
+    </footer>
+
+    <!-- SLIDER SCRIPT -->
+    <script>
+        const slides = document.querySelector('.slides');
+        const totalSlides = document.querySelectorAll('.slides img').length;
+        let index = 0;
+
+        function showSlide(n) {
+            index = (n + totalSlides) % totalSlides;
+            slides.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        document.querySelector('.next').addEventListener('click', () => showSlide(index + 1));
+        document.querySelector('.prev').addEventListener('click', () => showSlide(index - 1));
+
+        setInterval(() => showSlide(index + 1), 3000);
+    </script>
+
+</body>
+</html>
