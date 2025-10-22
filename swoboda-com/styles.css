@@ -1,0 +1,104 @@
+body {
+    background-color: gray;
+}
+
+.head{
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 90px;
+    background-image: linear-gradient(to right, purple, darkblue, black);
+    border-radius: 20px;
+    border: solid 1px black;
+}
+
+.foot{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    font-size: 14px;
+    border-radius: 20px;
+}
+
+.content{
+    min-height: 750px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-image: linear-gradient(to right, rgba(128, 0, 128, 0.8), rgba(0, 0, 139, 0.6), rgb(0, 0, 0));
+    border-radius: 20px;
+    border: solid 1px black;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+#erb{
+    width: 80px;
+    height: 80px;
+    order: 2;
+}
+
+#home{
+    order: 1;
+    width: 100px;
+    height: 50px;
+    background-color: rgb(119, 190, 12);
+    color: #222222;
+    border-radius: 40px;
+    border: none;
+    font-weight: bold;
+    font-size: 13px;
+    cursor: pointer;
+    align-self: center;
+}
+
+#home:hover{
+    background-color: green;
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+#lang{
+    order: 1;
+    width: 100px;
+    height: 50px;
+    background-color: rgb(119, 190, 12);
+    color: #222222;
+    border-radius: 40px;
+    border: none;
+    font-weight: bold;
+    font-size: 13px;
+    cursor: pointer;
+    align-self: center;
+}
+
+#lang:hover{
+    background-color: green;
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+.flag{
+    width: 40px;
+    height: 25px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.child-content{
+    color: white;
+    text-align: center;
+}
+
+.futbalnet{
+    width: 900px;
+    border-radius: 20px;
+    align-content: center;
+}
