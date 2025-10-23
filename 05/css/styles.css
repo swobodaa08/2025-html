@@ -1,0 +1,45 @@
+body{
+    background-color: gray;
+}
+
+.wrapper{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    left: 150px;
+    top: 150px;
+    border: 1px solid black;
+}
+
+.obdlznik,.kruh,.trojuholnik{
+    position: absolute;
+}
+
+.obdlznik{
+    top: 40px;
+    left: 40px;
+    height: 150px;
+    width: 80px;
+    background-color: blue;
+    z-index: 40;
+}
+
+.kruh{
+    left: 50px;
+    top: 60px;
+    height: 80px;
+    width: 80px;
+    background-color: green;
+    border-radius: 100%;
+}
+
+.trojuholnik{
+    top: 20px;
+    left: 70px;
+    height: 0;
+    width: 0;
+    border-style: solid;
+    border-width: 50px 50px 0px 50px;
+    border-color: red transparent transparent transparent;
+    z-index: 100;
+}

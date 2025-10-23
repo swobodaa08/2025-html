@@ -13,6 +13,10 @@ body {
     border: solid 1px black;
 }
 
+.nav{
+    position: fixed;
+}
+
 .foot{
     height: 50px;
     width: 100%;
@@ -26,7 +30,7 @@ body {
 }
 
 .content{
-    min-height: 750px;
+    min-height: 1450px;
     display: flex;
     flex-direction: column;
     align-items: center;
