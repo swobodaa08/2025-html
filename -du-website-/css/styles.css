@@ -10,15 +10,12 @@
 
 
 /*       body       */
-body{
-    background-color: rgb(52, 0, 95);
-}
 
 /*       header       */
 .header{
     width: 100%;
     min-height: 60px;
-    background-color: rgb(52, 0, 95);
+    background-color: #171c35;
 }
 
 .header-content{
@@ -32,8 +29,8 @@ body{
 }
 
 .logo{
-    width: 40px;
-    height: 50px;
+    width: 100px;
+    height: 36.75px;
     display: block;
 }
 
@@ -103,4 +100,76 @@ body{
 .btn:hover{
     background-color: white;
     color: rgb(150, 0, 150);
+}
+
+.social{
+    width: 25px;
+    height: 25px;
+    color: white;
+}
+
+.nav_link:focus::after {
+  opacity: 1;
+}
+
+
+/**       main       */
+
+main{
+    min-height: 100vh;
+}
+
+.intro{
+    background-color: #171c35;
+    min-height: 720px;
+}
+.intro_content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.intro_head{
+    color: white;
+}
+
+.intro_head2{
+    color: white;
+}
+
+.intro_text{
+    color: grey;
+}
+
+.about{
+    background-color: white;
+}
+
+.about_content{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.about_head{
+    margin: 40px 0 20px 0;
+    color: #171c35;
+}
+
+.about_head2{
+    left: 10px;
+    bottom: -8px;
+    content: "";
+    display: block;
+    width: 90px;
+    height: 2px;
+    background-color: rgb(8, 107, 140);
+}
+
+.about_text{
+    margin: 20px;
+    color: #171c35;
 }
