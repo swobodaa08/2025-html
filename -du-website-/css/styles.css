@@ -41,7 +41,6 @@
 
 
 /*       navigation       */
-.nav{}
 
 .nav_list{
     padding-left: 0;
@@ -113,16 +112,7 @@
 }
 
 
-/**       main       */
 
-main{
-    min-height: 100vh;
-}
-
-.intro{
-    background-color: #171c35;
-    min-height: 720px;
-}
 .intro_content{
     display: flex;
     justify-content: center;
@@ -130,19 +120,8 @@ main{
     flex-direction: column;
 }
 
-.intro_head{
-    color: white;
-}
 
-.intro_head2{
-    color: white;
-}
-
-.intro_text{
-    color: grey;
-}
-
-.about{
+.about_arc{
     background-color: white;
 }
 
@@ -172,4 +151,80 @@ main{
 .about_text{
     margin: 20px;
     color: #171c35;
+}
+
+/**       main       */
+
+main{
+    min-height: 100vh;
+}
+
+.main_arc{
+    min-height: 720px;
+    background-color: #171c35;
+}
+
+.main_section {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 120px 20px 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.main_trustrate {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    color: #fff;
+}
+
+.main_text_sec {
+    flex: 1;
+    max-width: 520px;   
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.main_img_sec{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.main_img_sec img {
+    width: 100%;
+    max-width: 550px;
+}
+
+.main_head{
+    font-size: 48px;
+    line-height: 1.2;
+    font-weight: 700;
+    color: white;
+    border: 1px solid orange;
+}
+
+.main_text{
+    font-size: 17px;
+    line-height: 1.6;
+    color: #d3d3d3;
+    border: 1px solid lime;
+}
+
+.main_pros {
+    display: flex;
+    gap: 25px;
+    margin-top: 10px;
+}
+
+.main_pros_items{
+    color: #ffffff;
+    font-size: 15px;
+    border: 1px solid red;
 }
