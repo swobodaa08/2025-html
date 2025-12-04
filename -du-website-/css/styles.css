@@ -418,3 +418,287 @@ main{
 .service_desc{
     color: #444;
 }
+
+/*     portfolio     */
+
+.portfolio_arc{
+    min-height: 800px;
+    background-color: #f5f5f5;
+}
+
+.portfolio_content{
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.portfolio_head{
+    font-size: 40px;
+    color: #171c35;
+}
+
+.portfolio_head2{
+    display: block;
+    width: 90px;
+    height: 2px;
+    background-color: rgb(8, 107, 140);
+}
+
+.portfolio_text{
+    margin: 20px 0 40px;
+    text-align: center;
+    font-size: 18px;
+    color: #171c35;
+}
+
+.portfolio_grid{
+    display: flex;
+    gap: 40px;
+}
+
+.portfolio_item{
+    width: 300px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.portfolio_img{
+    width: 100%;
+    border-radius: 12px 12px 0 0;
+}
+
+.portfolio_title{
+    font-size: 22px;
+    margin: 15px 0 5px 0;
+    color: #171c35;
+}
+
+.portfolio_desc{
+    color: #444;
+}
+
+
+/*     pricing     */
+
+.pricing_arc{
+    min-height: 850px;
+    background-color: white;
+}
+
+.pricing_content{
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.pricing_head{
+    font-size: 40px;
+    color: #171c35;
+}
+
+.pricing_head2{
+    display: block;
+    width: 90px;
+    height: 2px;
+    background-color: rgb(8, 107, 140);
+    margin: 0 auto;
+}
+
+.pricing_text{
+    margin: 20px 0 40px;
+    font-size: 18px;
+    color: #171c35;
+}
+
+.pricing_cards{
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+}
+
+.pricing_card{
+    width: 300px;
+    padding: 30px;
+    background: #f5f5f5;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.pricing_popular{
+    background: white;
+    border: solid 2px rgb(8,107,140);
+}
+
+.pricing_title{
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #171c35;
+}
+
+.pricing_price{
+    font-size: 36px;
+    font-weight: bold;
+    color: rgb(8, 107, 140);
+    margin-bottom: 20px;
+}
+
+.pricing_list{
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+    color: #444;
+}
+
+.pricing_list li{
+    margin: 10px 0;
+}
+
+.pricing_btn{
+    width: 100%;
+    padding: 12px 0;
+    background-color: rgb(8, 107, 140);
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.pricing_btn:hover{
+    background-color: rgb(6, 90, 120);
+}
+
+
+/*     droptown     */
+
+.dropdown_arc{
+    min-height: 600px;
+    background-color: #f5f5f5;
+}
+
+.dropdown_content{
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.dropdown_head{
+    font-size: 40px;
+    color: #171c35;
+}
+
+.dropdown_head2{
+    display: block;
+    width: 90px;
+    height: 2px;
+    margin: 0 auto;
+    background-color: rgb(8, 107, 140);
+}
+
+.dropdown_text{
+    margin: 20px 0 40px;
+    font-size: 18px;
+    color: #171c35;
+}
+
+.dropdown_list{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.dropdown_item{
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+.dropdown_question{
+    font-size: 20px;
+    font-weight: 600;
+    color: #171c35;
+}
+
+.dropdown_answer{
+    margin-top: 10px;
+    color: #444;
+}
+
+
+/*     contact     */
+
+.contact_arc{
+    min-height: 700px;
+    background-color: white;
+}
+
+.contact_content{
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.contact_head{
+    font-size: 40px;
+    color: #171c35;
+}
+
+.contact_head2{
+    width: 90px;
+    height: 2px;
+    margin: 0 auto;
+    background-color: rgb(8, 107, 140);
+    display: block;
+}
+
+.contact_text{
+    margin: 20px 0 40px;
+    font-size: 18px;
+    color: #171c35;
+}
+
+.contact_form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact_input,
+.contact_textarea{
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.contact_textarea{
+    min-height: 120px;
+    resize: none;
+}
+
+.contact_btn{
+    padding: 14px 0;
+    background-color: rgb(8, 107, 140);
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.contact_btn:hover{
+    background-color: rgb(6, 90, 120);
+}
