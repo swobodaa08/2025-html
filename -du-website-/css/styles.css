@@ -254,29 +254,28 @@ main{
 
 /*     about     */
 
-
 .about_arc{
-    min-height: 1080px;
-    background-color: white;
+    min-height: 800px;
+    background-image: linear-gradient(white);
 }
 
 .about_content{
-    background-color: white;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 80px 20px;
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .about_head{
-    margin: 60px 0 20px 0;
+    font-size: 40px;
     color: #171c35;
+    margin-bottom: 20px;
 }
 
 .about_head2{
-    left: 10px;
-    bottom: -8px;
-    content: "";
     display: block;
     width: 90px;
     height: 2px;
@@ -284,15 +283,19 @@ main{
 }
 
 .about_text{
-    margin: 20px;
+    margin: 20px 0 40px 0;
+    font-size: 18px;
     color: #171c35;
+    max-width: 900px;
 }
 
 /*     features     */
 
 .features_arc{
     min-height: 800px;
-    background-color: #f5f5f5;
+    background-image: linear-gradient(white, gray);
+    /* background: url(features_background.jpg) bottom center no-repeat #f5f5f5;
+    background-size: cover; */
 }
 
 .features_content{
@@ -327,6 +330,7 @@ main{
 .features_cards{
     display: flex;
     gap: 40px;
+    
 }
 
 .feature_card{
@@ -334,6 +338,7 @@ main{
     padding: 30px;
     border-radius: 12px;
     width: 300px;
+    height: 300px;
     text-align: center;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
@@ -358,7 +363,8 @@ main{
 
 .services_arc{
     min-height: 800px;
-    background-color: white;
+    /* background-color: white; */
+    background-image: linear-gradient(gray, white);
 }
 
 .services_content{
@@ -400,6 +406,7 @@ main{
     padding: 30px;
     border-radius: 12px;
     width: 300px;
+    height: 300px;
     text-align: center;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
@@ -423,7 +430,8 @@ main{
 
 .portfolio_arc{
     min-height: 800px;
-    background-color: #f5f5f5;
+    /* background-color: #f5f5f5; */
+    background-image: linear-gradient(white, gray);
 }
 
 .portfolio_content{
@@ -461,6 +469,7 @@ main{
 
 .portfolio_item{
     width: 300px;
+    height: 300px;
     background: white;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -468,8 +477,8 @@ main{
     padding-bottom: 20px;
 }
 
-.portfolio_img{
-    width: 100%;
+.portfolio_icon{
+    width: 60px;
     border-radius: 12px 12px 0 0;
 }
 
@@ -488,7 +497,8 @@ main{
 
 .pricing_arc{
     min-height: 850px;
-    background-color: white;
+    /* background-color: white; */
+    background-image: linear-gradient(gray, white);
 }
 
 .pricing_content{
@@ -525,6 +535,7 @@ main{
 
 .pricing_card{
     width: 300px;
+    height: 300px;
     padding: 30px;
     background: #f5f5f5;
     border-radius: 12px;
@@ -577,26 +588,27 @@ main{
 }
 
 
-/*     droptown     */
+/*     faq     */
 
-.dropdown_arc{
+.faq_arc{
     min-height: 600px;
-    background-color: #f5f5f5;
+    /* background-color: #f5f5f5; */
+    background-image: linear-gradient(white, gray);
 }
 
-.dropdown_content{
+.faq_content{
     max-width: 800px;
     margin: 0 auto;
     padding: 80px 20px;
     text-align: center;
 }
 
-.dropdown_head{
+.faq_head{
     font-size: 40px;
     color: #171c35;
 }
 
-.dropdown_head2{
+.faq_head2{
     display: block;
     width: 90px;
     height: 2px;
@@ -604,19 +616,19 @@ main{
     background-color: rgb(8, 107, 140);
 }
 
-.dropdown_text{
+.faq_text{
     margin: 20px 0 40px;
     font-size: 18px;
     color: #171c35;
 }
 
-.dropdown_list{
+.faq_list{
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.dropdown_item{
+.faq_item{
     background: white;
     padding: 20px;
     border-radius: 12px;
@@ -624,13 +636,13 @@ main{
     cursor: pointer;
 }
 
-.dropdown_question{
+.faq_question{
     font-size: 20px;
     font-weight: 600;
     color: #171c35;
 }
 
-.dropdown_answer{
+.faq_answer{
     margin-top: 10px;
     color: #444;
 }
@@ -640,7 +652,8 @@ main{
 
 .contact_arc{
     min-height: 700px;
-    background-color: white;
+    /* background-color: white; */
+    background-image: linear-gradient(gray, white);
 }
 
 .contact_content{
@@ -675,8 +688,7 @@ main{
     gap: 20px;
 }
 
-.contact_input,
-.contact_textarea{
+.contact_input, .contact_textarea{
     width: 100%;
     padding: 12px;
     border-radius: 8px;
@@ -701,4 +713,18 @@ main{
 
 .contact_btn:hover{
     background-color: rgb(6, 90, 120);
+}
+
+
+/*     footer     */
+.footer_class{
+    height: 100px;
+    background-image: linear-gradient(white);
+}
+
+.footer_copyright{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
