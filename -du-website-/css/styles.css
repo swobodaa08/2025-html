@@ -287,3 +287,134 @@ main{
     margin: 20px;
     color: #171c35;
 }
+
+/*     features     */
+
+.features_arc{
+    min-height: 800px;
+    background-color: #f5f5f5;
+}
+
+.features_content{
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.features_head{
+    font-size: 40px;
+    color: #171c35;
+    margin-bottom: 20px;
+}
+
+.features_head2{
+    display: block;
+    width: 90px;
+    height: 2px;
+    background-color: rgb(8, 107, 140);
+}
+
+.features_text{
+    margin: 20px 0 40px 0;
+    font-size: 18px;
+    color: #171c35;
+    text-align: center;
+}
+
+.features_cards{
+    display: flex;
+    gap: 40px;
+}
+
+.feature_card{
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.feature_icon{
+    width: 60px;
+    margin-bottom: 15px;
+}
+
+.feature_title{
+    color: #171c35;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.feature_desc{
+    color: #444;
+}
+
+
+/*     services     */
+
+.services_arc{
+    min-height: 800px;
+    background-color: white;
+}
+
+.services_content{
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.services_head{
+    font-size: 40px;
+    color: #171c35;
+    margin-bottom: 20px;
+}
+
+.services_head2{
+    display: block;
+    width: 90px;
+    height: 2px;
+    background-color: rgb(8, 107, 140);
+}
+
+.services_text{
+    margin: 20px 0 40px;
+    font-size: 18px;
+    color: #171c35;
+    text-align: center;
+}
+
+.services_list{
+    display: flex;
+    gap: 40px;
+}
+
+.service_item{
+    background: #f5f5f5;
+    padding: 30px;
+    border-radius: 12px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.service_icon{
+    width: 60px;
+    margin-bottom: 15px;
+}
+
+.service_title{
+    font-size: 22px;
+    color: #171c35;
+    margin-bottom: 10px;
+}
+
+.service_desc{
+    color: #444;
+}
