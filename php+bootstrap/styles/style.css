@@ -1,0 +1,19 @@
+body{
+    background-color: gray;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-primary{
+    display: flex;
+    justify-content: center;
+}
+.formular{
+    max-width: 750px;
+}
+
+form .row{
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
